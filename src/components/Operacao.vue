@@ -1,0 +1,37 @@
+<script setup>
+const props = defineProps(["operacao", "num1", "num2"]);
+</script>
+
+<template>
+  <div class="operation">
+    <h2>Selecione a operação que deseja fazer</h2>
+    <select @change="props.operacao">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">x</option>
+      <option value="/">/</option>
+    </select>
+  </div>
+  <div>
+    <input
+      @keyup="props.num1"
+      required
+      type="number"
+      placeholder="Insira o primeiro número"
+    />
+    <input
+      @keyup="props.num2"
+      required
+      type="number"
+      placeholder="Insira o segundo número"
+    />
+  </div>
+</template>
+
+<style scoped>
+input {
+  margin: 30px;
+  padding: 4px;
+  border-radius: 4px;
+}
+</style>
